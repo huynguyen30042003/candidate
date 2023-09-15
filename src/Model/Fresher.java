@@ -19,7 +19,7 @@ public class Fresher extends Candidate {
 
     public Fresher(int candidateId, String firstName, String lastName, int birthDay, String address, String phone,
             String email, String graduation_date, String graduation_rank, String education) {
-        super(candidateId, firstName, lastName, birthDay, address, phone, email);
+        super(candidateId, firstName, lastName, birthDay, address, phone, email, education);
         this.graduation_date = graduation_date;
         this.graduation_rank = graduation_rank;
         this.education = education;
@@ -51,6 +51,7 @@ public class Fresher extends Candidate {
 
     public void input() {
         super.input();
+        setCandidateType("Fresher");
         setGraduation_date(Library.validString("Enter valid graduation date"));
         setGraduation_rank(Library.validRank("Enter valid graduation rank"));
         setEducation(Library.validString("Enter valid education"));

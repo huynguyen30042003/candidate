@@ -6,7 +6,6 @@ import Model.Intern;
 
 public class main {
     public static void main(String[] args) {
-        // Candidate candidate=new Candidate();
         Experience experience = new Experience();
         Fresher fresher = new Fresher();
         Intern intern = new Intern();

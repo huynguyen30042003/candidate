@@ -1,6 +1,7 @@
 
 package Views;
 
+import Common.Algorithm;
 import Common.Library;
 import java.util.ArrayList;
 
@@ -40,27 +41,11 @@ public abstract class Menu<T> {
     // -------------------------------------------
 
     public abstract void execute(int n);
-    // -------------------------------------------
 
     public void run() {
-        while (true) {
+        do {
             int n = getSelected();
             execute(n);
-            if (n > mChon.size()) {
-                break;
-            }
-        }
+        } while (Algorithm.isContinue());
     }
-
-    public void runSearch() {
-        while (true) {
-            int n = getSelected();
-            System.out.println("n :" + n);
-            execute(n);
-            if (n > mChon.size()) {
-                break;
-            }
-        }
-    }
-
 }

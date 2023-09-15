@@ -12,7 +12,7 @@ public class Experience extends Candidate {
 
     public Experience(int candidateId, String firstName, String lastName, int birthDay, String address, String phone,
             String email, int explnYear, String proSkill) {
-        super(candidateId, firstName, lastName, birthDay, address, phone, email);
+        super(candidateId, firstName, lastName, birthDay, address, phone, email, proSkill);
         ExplnYear = explnYear;
         ProSkill = proSkill;
     }
@@ -35,6 +35,7 @@ public class Experience extends Candidate {
 
     public void input() {
         super.input();
+        setCandidateType("Experience");
         setExplnYear(Library.getInt("Enter experience year", 0, 100));
         setProSkill(Library.validString("Enter pro skill"));
     }

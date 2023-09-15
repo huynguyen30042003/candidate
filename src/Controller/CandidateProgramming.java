@@ -11,7 +11,7 @@ import Views.Menu;
 
 public class CandidateProgramming extends Menu<String> {
     static String[] option = { "Create Experience Candidate", "Create Fresher Candidate", "Create Intern Candidate",
-            "Search candidate", "Review Program" };
+            "Search candidate", "Exit" };
     Experience experience = new Experience();
     Fresher fresher = new Fresher();
     Intern intern = new Intern();
@@ -51,11 +51,24 @@ public class CandidateProgramming extends Menu<String> {
             case 4:
                 System.out.println(option[n]);
                 Algorithm.showAllCandidate(ExperienceArray, FresherArray, InternArray);
-                Algorithm.search();
+                String target = Library.validString("Enter value search");
+
+                int typeOfcandidate = Library.getInt("Enter type of candidare", 0, 2);
+                switch (typeOfcandidate) {
+                    case 0:
+                        Algorithm.searchExperience(ExperienceArray, target);
+                        break;
+                    case 1:
+                        Algorithm.searchFresher(FresherArray, target);
+                        break;
+                    case 2:
+                        Algorithm.searchArray(InternArray, target);
+                        break;
+                }
                 break;
             case 5:
                 System.out.println(option[n]);
-
+                System.exit(0);
                 break;
         }
     }

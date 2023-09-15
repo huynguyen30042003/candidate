@@ -7,13 +7,14 @@ public class Candidate {
     private String firstName, lastName;
     private int birthDay;
     private String address, phone, email;
+    private String candidateType;
 
     public Candidate() {
 
     }
 
     public Candidate(int candidateId, String firstName, String lastName, int birthDay, String address, String phone,
-            String email) {
+            String email, String candidateType) {
         this.candidateId = candidateId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,6 +22,15 @@ public class Candidate {
         this.address = address;
         this.phone = phone;
         this.email = email;
+        this.candidateType = candidateType;
+    }
+
+    public String getCandidateType() {
+        return candidateType;
+    }
+
+    public void setCandidateType(String candidateType) {
+        this.candidateType = candidateType;
     }
 
     public int getCandidateId() {
@@ -92,8 +102,7 @@ public class Candidate {
 
     @Override
     public String toString() {
-        return "Candidate [candidateId=" + candidateId + ", firstName=" + firstName + ", lastName=" + lastName
-                + ", birthDay=" + birthDay + ", address=" + address + ", phone=" + phone + ", email=" + email + "]";
+        return firstName + lastName +"|"+ birthDay +"|"+ address +"|"+ phone +"|"+ email + candidateType;
     }
-    
+
 }
